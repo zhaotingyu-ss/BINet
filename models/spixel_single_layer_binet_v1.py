@@ -146,12 +146,12 @@ class SpixelNet(nn.Module):
         out_conv0_1 = self.conv0_1(concat0)
 
         out_esm3 = self.esm_3(out_conv1_1, out5, out2)  # 增加esm unit
-        cam_out_3 = F.interpolate(out_esm3, scale_factor=2, mode='bilinear', align_corners=True)  # Sup-2 (b,32,104,104 ->b,32,208, 208)
-        cam_out_3 = self.sp_conv1(cam_out_3)
+        com_out_3 = F.interpolate(out_esm3, scale_factor=2, mode='bilinear', align_corners=True)  # Sup-2 (b,32,104,104 ->b,32,208, 208)
+        com_out_3 = self.sp_conv1(com_out_3)
 
         out_esm2 = self.esm_2(out_conv0_1, out5, out1)  # 增加esm unit
 
-        fin_out = self.C2(out_esm2, cam_out_3)
+        fin_out = self.C2(out_esm2, coam_out_3)
         mask0 = self.pred_mask0(fin_out)
         prob0 = self.softmax(mask0)
         return prob0
