@@ -21,9 +21,9 @@ model_names = sorted(name for name in models.__dict__
 
 parser = argparse.ArgumentParser(description='PyTorch SPixelNet inference on a folder of imgs',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument('--data_dir', metavar='DIR', default='/home/ruby/code/AINET/data_preprocessing/',help='path to images folder')
+parser.add_argument('--data_dir', metavar='DIR', default='./data_preprocessing/',help='path to images folder')
 
-parser.add_argument('--pretrained', metavar='PTH', help='path to pre-trained model', default= '/home/ruby/code/BINet/pretrain_ckpt/model_best.tar')
+parser.add_argument('--pretrained', metavar='PTH', help='path to pre-trained model', default= './pretrain_ckpt/model_best.tar')
 parser.add_argument('--output', metavar='DIR', default= './output' , help='path to output folder')
 parser.add_argument('--downsize', default=16, type=float, help='superpixel grid cell, must be same as training setting')
 parser.add_argument('-b', '--batch-size', default=1, type=int,  metavar='N', help='mini-batch size')
