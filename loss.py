@@ -30,4 +30,4 @@ def compute_semantic_pos_loss(prob_in, labxy_feat,  pos_weight=0.003,kernel_size
     loss_sem_sum = 0.005 * loss_sem
     loss_pos_sum = 0.005 * loss_pos
 
-    return loss_sum, loss_sem_sum, loss_pos_sum,loss_sem_sum
+    return loss_sum, loss_sem_sum, loss_pos_sum
