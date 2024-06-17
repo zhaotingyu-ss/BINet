@@ -21,7 +21,7 @@ model_names = sorted(name for name in models.__dict__
 
 parser = argparse.ArgumentParser(description='PyTorch SPixelNet inference on a folder of imgs',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument('--data_dir', metavar='DIR', default='/home/ruby/code/AINET/data_preprocessing/',help='path to images folder')
+parser.add_argument('--data_dir', metavar='DIR', default='./data_preprocessing/',help='path to images folder')
 
 parser.add_argument('--pretrained', metavar='PTH', help='path to pre-trained model', default= './model_best.tar')
 parser.add_argument('--output', metavar='DIR', default= './output' , help='path to output folder')
@@ -157,8 +157,6 @@ def main():
         # create model
         network_data = torch.load(args.pretrained)
         print("=> using pre-trained model '{}'".format(args.pretrained))
-        # model = models.load_state_dict(network_data, strict=False)
-        # print(network_data)
         model = models.__dict__[network_data['arch']]( data = network_data).cuda()
 
 
