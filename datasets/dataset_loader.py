@@ -7,7 +7,7 @@ from .BSD500 import *
 from .data_util import patch_shuffle
 
 
-def get_dis(label):
+def get_distance(label):
 
     height, width = label.shape[:2]
     label += 1
@@ -63,7 +63,7 @@ def BDS500(path_imgs, input_transform, co_transform, target_transform, flag):
 
     gt_ = label.numpy().copy()
     gt_ = np.squeeze(gt_,0)
-    dis2boundary = get_dis(gt_)
+    dis2boundary = get_distance(gt_)
     dis2boundary = torch.tensor(dis2boundary)
     return image, label, dis2boundary
 
