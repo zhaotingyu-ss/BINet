@@ -29,7 +29,7 @@ parser = argparse.ArgumentParser(description='PyTorch SpixelFCN Training on BSDS
 parser.add_argument('--dataset', metavar='DATASET', default='BSDS',  choices=dataset_names,
                     help='dataset type : ' +  ' | '.join(dataset_names))
 parser.add_argument('--arch', '-a', metavar='ARCH', default='SpixelNet1l_bn',  help='model architecture')
-parser.add_argument('--data', metavar='DIR',default='/home/ruby/code/AINET/data_preprocessing/', help='path to input dataset')
+parser.add_argument('--data', metavar='DIR',default='./data_preprocessing/', help='path to input dataset')
 parser.add_argument('--suffix',default='', help='suffix to save checkpoint')
 parser.add_argument('--train_img_height', '-t_imgH', default=208,  type=int, help='img height')
 parser.add_argument('--train_img_width', '-t_imgW', default=208, type=int, help='img width')
@@ -46,7 +46,7 @@ parser.add_argument('--lr', '--learning-rate', default=0.02, type=float,metavar=
 parser.add_argument('--finetune_stone', default=0, type=int, help='the epoch to use the boundary-perceiving loss to finetune')
 parser.add_argument('--milestones', default=[4139], metavar='N', nargs='*', help='epochs at which learning rate is divided by 2')
 parser.add_argument('--gpu', default= '0', type=str, help='gpu id')
-parser.add_argument('-b', '--batch-size', default=8, type=int,   metavar='N', help='mini-batch size')
+parser.add_argument('-b', '--batch-size', default=12, type=int,   metavar='N', help='mini-batch size')
 
 
 parser.add_argument('--solver', default='adam',choices=['adam','sgd'], help='solver algorithms, we use adam')
@@ -58,7 +58,7 @@ parser.add_argument('--additional_step', default= 100000, help='the additional i
 # ============== hyper-param ====================
 parser.add_argument('--pos_weight', '-p_w', default=0.003, type=float, help='weight of the pos term')
 parser.add_argument('--downsize', default=16, type=float,help='grid cell size for superpixel training ')
-parser.add_argument('--savepath',default='./pretrain_ckpt/test', help='path to save ckpt')
+parser.add_argument('--savepath',default='./', help='path to save ckpt')
 # ================= other setting ===================
 parser.add_argument('--print_freq', '-p', default=20, type=int,  help='print frequency (step)')
 parser.add_argument('--record_freq', '-rf', default=5, type=int,  help='record frequency (epoch)')
