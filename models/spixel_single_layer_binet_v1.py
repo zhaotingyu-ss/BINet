@@ -99,9 +99,9 @@ class SpixelNet(nn.Module):
         self.deconv0 = deconv(32, 16)
         self.conv0_1 = conv(self.batchNorm, 32, 16)
    
-        self.esm_3 = ReverseRecalibrationUnit(feature_channel=256, intern_channel=32, C2_channel=32)
+        self.esm_3 = EnhancedScreeningModule(feature_channel=256, intern_channel=32, C2_channel=32)
         self.sp_conv1 = BasicConv2d(32, 16, kernel_size=3, padding=1)
-        self.esm_2 = ReverseRecalibrationUnit(feature_channel=256, intern_channel=16, C2_channel=16)
+        self.esm_2 = EnhancedScreeningModule(feature_channel=256, intern_channel=16, C2_channel=16)
         self.C2 = C2(feature_channel=16)
 
 
