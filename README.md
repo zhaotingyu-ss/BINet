@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# Rethinking-superpixel-segmentation-from-biologically-inspired-mechanisms.
-Rethinking superpixel segmentation from biologically inspired mechanisms.（BINet）
-=======
+
 # RETHINKING SUPERPIXEL SEGMENTATION FROM BIOLOGICALLY INSPIRED MECHANISMS
 
 This is a PyTorch implementation of the superpixel segmentation network introduced in Applied Soft Computing  paper (2024):
@@ -90,6 +87,7 @@ bash my_eval.sh
 ```
 
 (4) run 
+
  ```
 cp ./eval_spixel/my_eval.sh <path/to/the/benchmark>/examples/bash/
 cd  <path/to/the/benchmark>/examples/
@@ -105,4 +103,3 @@ python plot_benchmark_curve.py --path '/home/name/superpixel/BINet/eval/test_mul
 for single algorithm
 ```
 
->>>>>>> 719495c (v1)
