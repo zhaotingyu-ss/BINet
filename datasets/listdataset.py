@@ -52,11 +52,11 @@ class ListDataset(data.Dataset):
     def __getitem__(self, index):
         data = []
         im_path = self.img_list[index]
-        bds_im, bds_label, direction_field = BDS500(im_path, self.BDS_ttrans, self.BDS_coTrans, self.target_transform, self.flag)
+        bds_im, bds_label, distance = BDS500(im_path, self.BDS_ttrans, self.BDS_coTrans, self.target_transform, self.flag)
 
         data.append(bds_im)
         data.append(bds_label)
-        data.append(direction_field)
+        data.append(distance)
 
         return data
 
