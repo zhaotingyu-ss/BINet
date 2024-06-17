@@ -38,9 +38,9 @@ class C2(nn.Module):
 
 
 
-class ReverseRecalibrationUnit(nn.Module):
+class EnhancedScreeningModule(nn.Module):
     def __init__(self, feature_channel=1024, intern_channel=32,C2_channel=16):
-        super(ReverseRecalibrationUnit, self).__init__()
+        super(EnhancedScreeningModule, self).__init__()
         self.feature_channel = feature_channel
 
         self.ra_conv1 = BasicConv2d(feature_channel, intern_channel, kernel_size=3, padding=1)
