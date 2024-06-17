@@ -157,7 +157,7 @@ def main(our1l_res_path,save_path):
 
 
 if __name__ == '__main__':
-    path1 = '/home/ruby/code/BINet/output/test_multiscale_enforce_connect'
-    save_path = '/home/ruby/code/BINet/output'
+    path1 = './BINet/output/test_multiscale_enforce_connect'
+    save_path = './BINet/output'
 
     main(path1, save_path)
