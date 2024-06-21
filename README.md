@@ -3,7 +3,20 @@
 
 This is a PyTorch implementation of the superpixel segmentation network introduced in Applied Soft Computing  paper (2024):
 
-
+## Citation
+If you use this code in your research, then please consider citing:
+Bibtex:
+```
+@article{zhao2024rethinking,
+  title={Rethinking superpixel segmentation from biologically inspired mechanisms},
+  author={Zhao, TingYu and Peng, Bo and Sun, Yuan and Yang, DaiPeng and Zhang, ZhenGuang and Wu, Xi},
+  journal={Applied Soft Computing},
+  volume={156},
+  pages={111467},
+  year={2024},
+  publisher={Elsevier}
+}
+```
 ## Prerequisites
 The training code was mainly developed and tested with python 3.8, PyTorch 1.8.0, CUDA 11.1, and Ubuntu 18.04.
 
@@ -14,7 +27,12 @@ cd third_party/cython/
 python setup.py install --user
 cd ../..
 ```
+## Demo
+Specify the image path and use the pretrained model to generate superpixels for an image:
 
+```
+python run_demo.py 
+```
 ## Data preparation 
 To generate training and test dataset, please first download the data from the original [BSDS500 dataset](http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_full.tgz), 
 and extract it to  ```<BSDS_DIR>```. Then, run 
