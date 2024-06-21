@@ -28,7 +28,7 @@ python setup.py install --user
 cd ../..
 ```
 ## Demo
-Specify the image path and use the pretrained model to generate superpixels for an image:
+Specify the image path and use the pretrained model(https://github.com/zhaotingyu-ss/BINet/tree/main/pretrain_ckpt) to generate superpixels for an image:
 
 ```
 python run_demo.py 
